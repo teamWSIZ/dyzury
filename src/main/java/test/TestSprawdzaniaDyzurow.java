@@ -14,9 +14,9 @@ public class TestSprawdzaniaDyzurow {
         Break b1 = new Break();
         b1.setNazwa("Pierwsza");
         Break b2 = new Break();
-        b1.setNazwa("Druga");
+        b2.setNazwa("Druga");
         Break b3 = new Break();
-        b1.setNazwa("Trzecia");
+        b3.setNazwa("Trzecia");
         dao.insertNew(b1);
         dao.insertNew(b2);
         dao.insertNew(b3);
