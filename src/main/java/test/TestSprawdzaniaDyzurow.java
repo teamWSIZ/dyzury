@@ -6,6 +6,8 @@ import service.BreakDao;
 import service.DyzurDao;
 import service.UserDao;
 
+import java.util.Date;
+
 /**
  * Created on 03.09.16, at 11:42
  */
@@ -42,7 +44,9 @@ public class TestSprawdzaniaDyzurow {
         Dyzur d3 = new Dyzur();
         d3.setIduser(2);
         d3.setIdbreak(3);
+        d3.setData(new Date());
         repoDyzurow.insertDyzur(d3);
+
 
 
 
