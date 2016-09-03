@@ -14,15 +14,19 @@ public class BreakDao {
     Map<Integer, Break> breaks = new HashMap<>();
     Integer nextId = 1;
 
-    Break insertNew(Break noId) {
+    public Break insertNew(Break noId) {
         noId.setIdbreak(nextId++);
         breaks.put(noId.getIdbreak(), noId);
         return noId;
     }
 
-    List<Break> findAll() {
+    public List<Break> findAll() {
         List<Break> res = new ArrayList<>();
         for(int id : breaks.keySet()) res.add(breaks.get(id));
         return res;
+    }
+
+    public Break findById(int id) {
+        return breaks.get(id);
     }
 }

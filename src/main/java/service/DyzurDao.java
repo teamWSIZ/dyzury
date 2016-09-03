@@ -16,19 +16,19 @@ public class DyzurDao {
     Map<Integer, Dyzur> dyzurs = new HashMap<>();
     Integer nextId = 1;
 
-    Dyzur insertDyzur(Dyzur noId) {
+    public Dyzur insertDyzur(Dyzur noId) {
         noId.setIddyzur(nextId++);
         dyzurs.put(noId.getIddyzur(), noId);
         return noId;
     }
 
-    List<Dyzur> findAll() {
+    public List<Dyzur> findAll() {
         List<Dyzur> res = new ArrayList<>();
         for(int id : dyzurs.keySet()) res.add(dyzurs.get(id));
         return res;
     }
 
-    List<Dyzur> findByUserId(int userid) {
+    public List<Dyzur> findByUserId(int userid) {
         List<Dyzur> res = new ArrayList<>();
         for(int id : dyzurs.keySet()) {
             Dyzur d = dyzurs.get(id);
