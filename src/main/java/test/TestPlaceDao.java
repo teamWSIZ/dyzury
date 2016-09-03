@@ -31,7 +31,6 @@ public class TestPlaceDao {
         for(Place u : repoPlace.findAll()) {
             System.out.println(u);
         }
-        System.out.println("------------");
         System.out.println(repoPlace.findById(2));
     }
 }

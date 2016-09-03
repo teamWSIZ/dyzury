@@ -19,6 +19,7 @@ public class TestUserDao {
         User l = new User();
         l.setNazwa("Lech");
         repoUserow.insertNewUser(l);
+        System.out.println("----------");
     }
 
     public static void main(String[] args) {
