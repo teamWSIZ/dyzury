@@ -1,5 +1,6 @@
 package gui;
 
+import model.Dyzur;
 import model.User;
 import service.BreakDao;
 import service.DyzurDao;
@@ -51,7 +52,15 @@ public class MainGui {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //Wyciąga który obiekt klasy User jest aktualnie wybrany w combo
-                System.out.println((User)(comboBox1.getSelectedItem()));
+                textArea1.setText("");
+                User wybrany = (User)comboBox1.getSelectedItem();
+                for (Dyzur d : dyzurDao.findByUserId(wybrany.getIduser())) {
+                    textArea1.append(
+                            "Dyzur na break:" + breakDao.findById(d.getIdbreak()) +
+                                    "\t User na dyzuze:" + userDao.findById(d.getIduser()));
+                    textArea1.append("\n");
+                }
+
             }
         });
     }
