@@ -1,7 +1,13 @@
 package model;
 
-/**
- * Created on 03.09.16, at 11:30
- */
+import lombok.Data;
+
+@Data
 public class Dyzur {
+    Integer iddyzur;
+    Integer iduser;
+    Integer idbreak;
+    // Integer idplace;
+    // Integer idbreak;
+    // Date data;
 }
