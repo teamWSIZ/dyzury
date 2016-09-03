@@ -24,6 +24,22 @@ public class TestSprawdzaniaDyzurow {
         dao.insertNew(b3);
     }
 
+    public static void createDyzurs(DyzurDao dyzurDao) {
+        Dyzur d1 = new Dyzur();
+        d1.setIduser(1);
+        d1.setIdbreak(1);
+        dyzurDao.insertDyzur(d1);
+        Dyzur d2 = new Dyzur();
+        d2.setIduser(1);
+        d2.setIdbreak(2);
+        dyzurDao.insertDyzur(d2);
+        Dyzur d3 = new Dyzur();
+        d3.setIduser(2);
+        d3.setIdbreak(3);
+        d3.setData(new Date());
+        dyzurDao.insertDyzur(d3);
+    }
+
     public static void main(String[] args) {
         UserDao repoUserow = new UserDao();
         BreakDao repoBreak = new BreakDao();
@@ -31,24 +47,8 @@ public class TestSprawdzaniaDyzurow {
 
         TestUserDao.createUsers(repoUserow);
         createBreaks(repoBreak);
-
+        createDyzurs(repoDyzurow);
         //to moglo by byc juz w osobnym dialogu
-        Dyzur d1 = new Dyzur();
-        d1.setIduser(1);
-        d1.setIdbreak(1);
-        repoDyzurow.insertDyzur(d1);
-        Dyzur d2 = new Dyzur();
-        d2.setIduser(1);
-        d2.setIdbreak(2);
-        repoDyzurow.insertDyzur(d2);
-        Dyzur d3 = new Dyzur();
-        d3.setIduser(2);
-        d3.setIdbreak(3);
-        d3.setData(new Date());
-        repoDyzurow.insertDyzur(d3);
-
-
-
 
         //wypisanie wszystkich
         for(Dyzur d : repoDyzurow.findAll()) {
